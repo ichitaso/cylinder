@@ -26,6 +26,7 @@ local function builder()
     b.archs = {
         'armv7',
         'arm64',
+        'arm64e',
     }
     b.include_dirs = {
         'deps/src',
@@ -46,19 +47,19 @@ local deb = debber()
 deb.packageinfo = {
     Package = 'com.r333d.cylinder',
     Name = 'Cylinder',
-    Version = '1.0.7~beta1',
+    Version = '1.0.7~beta2',
     Architecture = 'iphoneos-arm',
     Depends = 'firmware (>= 3.0), mobilesubstrate (>= 0.9.6011), preferenceloader',
     Icon = 'file:///Library/PreferenceBundles/CylinderSettings.bundle/Icon@2x.png',
-    Depiction = 'http://moreinfo.thebigboss.org/moreinfo/depiction.php?file=cylinderDp',
+    Depiction = 'https://cydia.ichitaso.com/depiction/cylinder.html',
     Description = 'Make your icons dance',
-    Homepage = 'http://github.com/rweichler/cylinder',
-    Maintainer = 'Reed Weichler <rweichler+cydia@gmail.com>',
+    Homepage = 'https://github.com/rweichler/cylinder',
+    Maintainer = 'ichitaso <willfeeltips+cylider@gmail.com>',
     Author = 'Reed Weichler (rweichler) <rweichler+cydia@gmail.com>',
     Section = 'Tweaks',
 }
 deb.input = builder().build_dir..'/layout'
-deb.output = 'cylinder.deb'
+deb.output = 'com.r333d.cylinder.cylinder_1.0.7~beta2_iphoneos-arm.deb'
 
 local function logos_workaround(flag)
     if flag == 'clean' then
